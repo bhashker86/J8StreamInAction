@@ -18,11 +18,17 @@ public class Java8Stream2 {
 	//System.out.println("Employee In Each Department: " +StreamImpl.orgEmpByDepartment(empList));
 	
 	
-	System.out.println("Program to print total employee  working in each department");
+	/*
+	 * System.out.
+	 * println("Program to print total employee  working in each department");
+	 * //System.out.println("Employee List: " +empList);
+	 * System.out.println("Total Employee In Each Department: "
+	 * +StreamImpl.getTotalEmpByDept(empList));
+	 */
+	
+	System.out.println("Program to print   group  total employee  by its status");
 	//System.out.println("Employee List: " +empList);
-	System.out.println("Total Employee In Each Department: " +StreamImpl.getTotalEmpByDept(empList));
-	
-	
+	System.out.println("Total Employee  group by its status  : " +StreamImpl.groupTotalEmployeeByStatus(empList));
 	
 	
 	}

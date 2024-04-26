@@ -9,14 +9,18 @@ private String name;
 private String  grade;
 private String dept;
 
+private boolean status;
 
-public Employee(int id, String name, String grade, String dept) {
+
+public Employee(int id, String name, String grade, String dept, boolean status) {
 	super();
 	this.id = id;
 	this.name = name;
 	this.grade = grade;
 	this.dept = dept;
+	this.status = status;
 }
+
 @Override
 public int hashCode() {
 	return Objects.hash(dept, grade, id, name);
@@ -60,6 +64,12 @@ public String getDept() {
 }
 public void setDept(String dept) {
 	this.dept = dept;
+}
+public boolean isStatus() {
+	return status;
+}
+public void setStatus(boolean status) {
+	this.status = status;
 }
 
 	

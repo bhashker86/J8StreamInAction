@@ -22,4 +22,12 @@ public class StreamImpl {
 		return empList.stream().collect(Collectors.groupingBy(Employee::getDept,Collectors.counting()));
 	}
 	
+	
+	//function to  print active and inactive employee in given collection of employee.
+	 public static Map<Boolean, List<Employee>> groupTotalEmployeeByStatus(List<Employee> emplist){
+	   return emplist.stream().collect(Collectors.groupingBy(Employee::isStatus,Collectors.toList()));	
+	}
+	
+	
+	
 }
