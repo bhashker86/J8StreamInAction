@@ -25,10 +25,18 @@ public class Java8Stream2 {
 	 * System.out.println("Total Employee In Each Department: "
 	 * +StreamImpl.getTotalEmpByDept(empList));
 	 */
+	/*
+	 * System.out.println("Program to print   group  total employee  by its status"
+	 * ); //System.out.println("Employee List: " +empList);
+	 * System.out.println("Total Employee  group by its status  : "
+	 * +StreamImpl.groupTotalEmployeeByStatus(empList));
+	 */
 	
-	System.out.println("Program to print   group  total employee  by its status");
-	//System.out.println("Employee List: " +empList);
-	System.out.println("Total Employee  group by its status  : " +StreamImpl.groupTotalEmployeeByStatus(empList));
+	System.out.println("Program to print   Emp with Max and Min salary");
+	System.out.println("Employee List: " +empList);
+	System.out.println("Emp with Max Salary  : " +StreamImpl.getEmpWithMaxSal(empList) + "Employee with min salary: " + StreamImpl.getEmpWithMinSal(empList));
+	
+	
 	
 	
 	}

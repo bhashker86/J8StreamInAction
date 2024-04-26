@@ -30,11 +30,11 @@ public class BaseOpEpm {
 	public List<Employee> createEmpList(){
 		
 		List<Employee> empList=new ArrayList<>();
-		empList.add(new Employee(1,"bhashker kumar","A3","IT",true));
-		empList.add(new Employee(2,"Anand","A3","IT",false));
-		empList.add(new Employee(3,"Tantan","A2","Banking",true));
-		empList.add(new Employee(4,"Amit kumar","A4","Manager",true));
-		empList.add(new Employee(5,"Rahul","A4","Banking",true));
+		empList.add(new Employee(1,"bhashker kumar","A3","IT",4000,true));
+		empList.add(new Employee(2,"Anand","A3","IT",6000,false));
+		empList.add(new Employee(3,"Tantan","A2","Banking",65000,true));
+		empList.add(new Employee(4,"Amit kumar","A4","Manager",89000,true));
+		empList.add(new Employee(5,"Rahul","A4","Banking",90000,true));
 		
 		return empList;
 		

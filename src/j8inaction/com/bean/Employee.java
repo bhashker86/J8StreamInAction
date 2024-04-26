@@ -8,22 +8,23 @@ private int id;
 private String name;
 private String  grade;
 private String dept;
-
+private int salary;
 private boolean status;
 
 
-public Employee(int id, String name, String grade, String dept, boolean status) {
+public Employee(int id, String name, String grade, String dept, int i, boolean status) {
 	super();
 	this.id = id;
 	this.name = name;
 	this.grade = grade;
 	this.dept = dept;
+	this.salary = i;
 	this.status = status;
 }
 
 @Override
 public int hashCode() {
-	return Objects.hash(dept, grade, id, name);
+	return Objects.hash(dept, grade, id, name, salary, status);
 }
 @Override
 public boolean equals(Object obj) {
@@ -35,11 +36,12 @@ public boolean equals(Object obj) {
 		return false;
 	Employee other = (Employee) obj;
 	return Objects.equals(dept, other.dept) && Objects.equals(grade, other.grade) && id == other.id
-			&& Objects.equals(name, other.name);
+			&& Objects.equals(name, other.name) && Objects.equals(salary, other.salary) && status == other.status;
 }
 @Override
 public String toString() {
-	return "Employee [id=" + id + ", name=" + name + ", grade=" + grade + ", dept=" + dept + "]";
+	return "Employee [id=" + id + ", name=" + name + ", grade=" + grade + ", dept=" + dept + ", salary=" + salary
+			+ ", status=" + status + "]";
 }
 public int getId() {
 	return id;
@@ -70,6 +72,14 @@ public boolean isStatus() {
 }
 public void setStatus(boolean status) {
 	this.status = status;
+}
+
+public int getSalary() {
+	return salary;
+}
+
+public void setSalary(int salary) {
+	this.salary = salary;
 }
 
 	
