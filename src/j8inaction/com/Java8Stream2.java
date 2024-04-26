@@ -32,11 +32,17 @@ public class Java8Stream2 {
 	 * +StreamImpl.groupTotalEmployeeByStatus(empList));
 	 */
 	
-	System.out.println("Program to print   Emp with Max and Min salary");
+	/*System.out.println("Program to print   Emp with Max and Min salary");
 	System.out.println("Employee List: " +empList);
 	System.out.println("Emp with Max Salary  : " +StreamImpl.getEmpWithMaxSal(empList) + "Employee with min salary: " + StreamImpl.getEmpWithMinSal(empList));
+	*/
+	System.out.println("Program to print  Frequency Count  of character in a word");
+	System.out.println("String : " + "bhashker");
+	System.out.println("Map of character   : " +StreamImpl.getCharFreqCount("bhashker"));
 	
-	
+	System.out.println("Program to print  Frequency Count  of number in a  number");
+	System.out.println("String : " + "2323661");
+	System.out.println("Map of character   : " +StreamImpl.getFreqCountOfNumber(new Integer(2323661)));
 	
 	
 	}

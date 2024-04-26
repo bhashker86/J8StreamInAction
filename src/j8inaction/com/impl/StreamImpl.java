@@ -1,9 +1,13 @@
 package j8inaction.com.impl;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import j8inaction.com.bean.Employee;
@@ -48,6 +52,30 @@ public class StreamImpl {
 		if(opEmp.isEmpty())
 			return emp;
 		return opEmp.get();
+	}
+	
+	//function to print employee with max salary in each department
+	/*
+	 * public static Map<Integer, Optional<Employee>>
+	 * getMaxSalEmpInEachDept(List<Employee> emplist){ return emplist.stream()
+	 * .collect(Collectors.groupingBy(Employee::getDept), Collectors.reducing(
+	 * BinaryOperator.maxBy( Comparator.comparing(Employee::getSalary) ) ) ); }
+	 */
+	
+	//function to   return number of time a number get repeated. 12223343=1->1,2->3,3->3,4->1
+	public static Map<Integer,Long> getFreqCountOfNumber(Integer number){
+		
+		List<Integer> numberList=Arrays.asList( number.toString().split(""))
+				                       .stream()
+				                       .map(v->Integer.valueOf(v)).collect(Collectors.toList()); 
+	return	numberList.stream()
+		          .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+	}
+	
+	//function to return number of time a character get repeated in string bhashker=b->1,h->2, a->1,h->1,k->1,e->1,r->1
+	public static Map<Character,Long> getCharFreqCount(String str){
+		List<Character> charList= str.chars().mapToObj(c->(char)c).toList();
+		return charList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 	}
 	
 	
