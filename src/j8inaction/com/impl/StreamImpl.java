@@ -9,8 +9,11 @@ import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import j8inaction.com.exception.*;
 import j8inaction.com.bean.Employee;
+
 
 public class StreamImpl {
 
@@ -114,9 +117,24 @@ public class StreamImpl {
 			      .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 			
 		} 
+	//function to find the occurrence of character in word.
+		public static Map<Character, Long> findFreqOfCharacInWord(String str) throws IsStringEmptyException{
+			if(str==null)
+				 throw new IsStringEmptyException("Input String Is Null");
+			return str.toLowerCase().replaceAll(" ", "").chars()
+			                       .mapToObj(v->(char)v)
+			                       .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+			                           
+		}
 	
-	
-	
+		//function to find the occurrence of character in word.
+				public static Map<String, Long> findFreqOfCharacInWord2(String str) throws IsStringEmptyException{
+					if(str==null)
+						 throw new IsStringEmptyException("Input String Is Null");
+					return Stream.of(str.toLowerCase().replaceAll(" ", "").split(""))
+					                    .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+					                           
+				}
 	
 	
 	

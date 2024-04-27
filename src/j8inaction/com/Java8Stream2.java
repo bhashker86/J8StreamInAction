@@ -1,7 +1,7 @@
 package j8inaction.com;
 
 import java.util.List;
-
+import j8inaction.com.exception.*;
 import j8inaction.com.bean.Employee;
 import j8inaction.com.utils.BaseOpEpm;
 import j8inaction.com.impl.StreamImpl;
@@ -57,6 +57,14 @@ public class Java8Stream2 {
 	System.out.println("---------------------------------------");
 	System.out.println("Occurrence Wrod in string: "+"My Name i iss Bhashker Kumar is Bhashker My:"+StreamImpl.findFreqOfWordIgnoreCase("My Name i iss Bhashker Kumar is Bhashker my"));
 	
+	
+	System.out.println("---------------------------------------");
+	try {
+		System.out.println("Occurrence Character in Word: "+"Bhashker kumar:"+StreamImpl.findFreqOfCharacInWord2("Bhashker kumar"));
+	} catch (IsStringEmptyException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	
 	
 	
