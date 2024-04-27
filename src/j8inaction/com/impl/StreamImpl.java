@@ -9,6 +9,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import j8inaction.com.exception.*;
@@ -135,9 +136,32 @@ public class StreamImpl {
 					                    .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 					                           
 				}
+	 //find the words with maximum number of vowels.
+				public static void wordWithMaxVowel(String str) {
+					
+					 Stream.of(str.split(" "))
+					      .filter(e->e.replaceAll("[^aeiouAEIOU]","").length()==2) .forEach(System.out::println);
+				}
+	//Given a list of  string ["as","123","32","2as"]  create another  integer list that contains only integer.
+	//The output should be  List<Integer> list=[123,32]
+				public static List<Integer> filterStringOfArray(List<String > list) {
+					
+				return	list.stream()
+					    .filter(v->v.matches("[0-9]"))
+					    .map(v->Integer.valueOf(v))
+					    .collect(Collectors.toList());
+				}
 	
-	
-	
-	
-	
+	//Given an array of integer  find the sum of the unique element.
+				public static Integer  findSumOfUniqueElement(int [] intArray) {
+					
+					 return Arrays.stream(intArray)
+					                       .distinct()
+                                           .sum();
+					                       
+				}
+				public static Integer  findSumOfUniqueElement2(int [] intArray) {
+					 return IntStream.of(intArray).distinct().sum();
+					                       
+				}
 }

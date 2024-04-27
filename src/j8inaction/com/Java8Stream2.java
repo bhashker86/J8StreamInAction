@@ -1,10 +1,12 @@
 package j8inaction.com;
 
+import java.util.ArrayList;
 import java.util.List;
-import j8inaction.com.exception.*;
+
 import j8inaction.com.bean.Employee;
-import j8inaction.com.utils.BaseOpEpm;
+import j8inaction.com.exception.IsStringEmptyException;
 import j8inaction.com.impl.StreamImpl;
+import j8inaction.com.utils.BaseOpEpm;
 
 public class Java8Stream2 {
 
@@ -66,8 +68,24 @@ public class Java8Stream2 {
 		e.printStackTrace();
 	}
 	
+	System.out.println("---------------------------------------");
+	System.out.println("Word with maximum  number of vowel: "+"My Name i iss Bhashker :");
+	StreamImpl.wordWithMaxVowel("My Name i iss Bhashker ");
+	
+	System.out.println("---------------------------------------");
+	List<String> strList=new ArrayList<>();
+	strList.add("as");
+	strList.add("123");
+	strList.add("32");
+	strList.add("2as");
+	System.out.println("Given a list of  string \"as\",\"123\",\"32\",\"2as\"  create another  integer list that contains only integer: "+StreamImpl.filterStringOfArray(strList));
 	
 	
+	System.out.println("---------------------------------------");
+	int [] intArr= {1,2,3,4,4,4,5,51};
+	System.out.println("Given a list of : "+ StreamImpl.findSumOfUniqueElement2(intArr));
+	StreamImpl.findSumOfUniqueElement(intArr);
+	//StreamImpl.findSumOfUniqueElement2(intArr);
 	
 	
 	
