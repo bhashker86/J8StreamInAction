@@ -44,6 +44,35 @@ public class Java8Stream2 {
 	System.out.println("String : " + "2323661");
 	System.out.println("Map of character   : " +StreamImpl.getFreqCountOfNumber(new Integer(2323661)));
 	
+	System.out.println("---------------------------------------");
+	System.out.println("Longest Wrod in string: "+"My Name i iss Bhashker Kumar isssssdddssssss :"+StreamImpl.getLongestWord("My Name i iss Bhashker Kumar isssssdddssssss"));
+	
+	
+	System.out.println("---------------------------------------");
+	System.out.println("Second Longest Wrod in string: "+"My Name i iss Bhashker Kumar isssssdddssssss sdsdfert :"+StreamImpl.getSecondLongestWord("My Name i iss Bhashker Kumar isssssdddssssss sdsdfert"));
+	
+	System.out.println("---------------------------------------");
+	System.out.println("Occurrence Wrod in string: "+"My Name i iss Bhashker Kumar is Bhashker My:"+StreamImpl.findFreqOfWord("My Name i iss Bhashker Kumar is Bhashker my"));
+	
+	System.out.println("---------------------------------------");
+	System.out.println("Occurrence Wrod in string: "+"My Name i iss Bhashker Kumar is Bhashker My:"+StreamImpl.findFreqOfWordIgnoreCase("My Name i iss Bhashker Kumar is Bhashker my"));
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	}
 

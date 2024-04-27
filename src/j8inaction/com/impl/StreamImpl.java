@@ -78,5 +78,48 @@ public class StreamImpl {
 		return charList.stream().collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 	}
 	
+	//Function to find the longest word in string
+	public static  String  getLongestWord(String str) {
+	 return Arrays.asList(str.split(" ")).stream().max(Comparator.comparing(String::length)).get();
+	}
+	
+	public static  String  getLongestWord2(String str) {
+		 return Arrays.asList(str.split(" "))
+				      .stream()
+				      .sorted(Comparator.comparing(String::length).reversed())
+				      .findFirst()
+				      .get();
+		}
+	//Function to find the second longest word in string
+	public static String getSecondLongestWord(String str) {
+		return Arrays.asList(str.split(" "))
+				     .stream()
+				     .sorted(Comparator.comparing(String::length).reversed())
+				     .skip(1)
+				     .findFirst()
+				     .get();
+	}
+	
+	//function to find the number of occurrence of each word in string
+	public static Map<String ,Long>  findFreqOfWord(String str) {
+		return Arrays.asList(str.split(" "))
+		      .stream()
+		      .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+		
+	} 
+	//function to find the number of occurrence of each word in string
+		public static Map<String ,Long>  findFreqOfWordIgnoreCase(String str) {
+			return Arrays.asList(str.toLowerCase().split(" "))
+			      .stream()
+			      .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+			
+		} 
+	
+	
+	
+	
+	
+	
+	
 	
 }
